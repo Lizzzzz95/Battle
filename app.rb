@@ -24,8 +24,6 @@ class Battle < Sinatra::Base
     # @player_2_name = session[:player_2_name]
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
-    @player_1_hitpoints = 10
-    @player_2_hitpoints = 10
     erb(:play)
   end
 
@@ -34,6 +32,7 @@ class Battle < Sinatra::Base
     # @player_2_name = session[:player_2_name]
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
+    @player_1.attack(@player_2)
     erb(:attack)
   end
 
